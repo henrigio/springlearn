@@ -2,6 +2,11 @@ pipeline {
   agent any
   stages {
     stage('build') {
+      
+       steps {
+        sh 'sudo docker pull maven:3-alpine'
+      }
+      
       agent {
         docker {
         image 'maven:3-alpine'
