@@ -2,17 +2,8 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      
-       steps {
-        sh 'sudo docker pull maven:3-alpine'
-      }
-      
-      agent {
-        docker {
-        image 'maven:3-alpine'
-        }
-      }
       steps {
+        sh 'sudo docker pull maven:3-alpine'
         sh './mvnw -B clean package'
         stash name: 'war', includes: 'target'
       }
