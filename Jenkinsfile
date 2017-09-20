@@ -8,8 +8,7 @@ pipeline {
         }
 }
       steps {
-        sh './mvnw -B clean package'
-        stash(name: 'war', includes: 'target')
+        sh 'mvn'
       }
     }
     stage('backend') {
