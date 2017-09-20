@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         sh './mvnw -B clean package'
-        stash name: 'war', includes: 'target
+        stash name: 'war', includes: 'target'
       }
     }
     stage('backend') {
