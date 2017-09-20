@@ -2,7 +2,6 @@ pipeline {
   agent any
   stages {
     stage('build') {
-
       steps {
         sh 'who i am'
         sh './mvnw -B clean package'
