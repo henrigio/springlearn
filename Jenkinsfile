@@ -27,7 +27,7 @@ pipeline {
     }
     stage('staticanalysis') {
       steps {
-        sh 'static analysis'
+        sh 'echo static analysis'
       }
     }
     stage('deploy') {
