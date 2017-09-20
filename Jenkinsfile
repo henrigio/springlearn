@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'sudo docker pull maven:3-alpine'
         sh './mvnw -B clean package'
-        stash name: 'war', includes: 'target'
+        stash(name: 'war', includes: 'target')
       }
     }
     stage('backend') {
